@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avaliador de Candidatos</title>
+  <style>
+    body {
+      width: 350px;
+      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    
+    h2 {
+      margin-top: 0;
+      text-align: center;
+      font-size: 18px;
+    }
+    
+    .status {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 15px;
+      margin-top: 15px;
+    }
+    
+    .error-box {
+      background: rgba(255, 87, 87, 0.2);
+      border-left: 4px solid #ff5757;
+      padding: 12px;
+      margin-top: 10px;
+      border-radius: 4px;
+    }
+    
+    .error-title {
+      font-weight: bold;
+      color: #ffcccc;
+      margin-bottom: 5px;
+    }
+    
+    .error-description {
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    
+    .btn {
+      background: white;
+      color: #667eea;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 15px;
+      font-weight: bold;
+      transition: transform 0.2s;
+    }
+    
+    .btn:hover {
+      transform: scale(1.02);
+    }
+    
+    .loading {
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .spinner {
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-top: 3px solid white;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 10px;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .no-document {
+      text-align: center;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h2>🔍 Avaliador de Candidatos</h2>
+  
+  <div id="content">
+    <div class="loading">
+      <div class="spinner"></div>
+      <p>Analisando documento...</p>
+    </div>
+  </div>
+  
+  <button class="btn" onclick="analyzeDocument()">Reanalisar</button>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

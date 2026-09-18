@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gerador de Ícones</title>
+</head>
+<body>
+  <h2>Gerar ícones PNG para a extensão</h2>
+  <p>Abra este arquivo no navegador e use as ferramentas de desenvolvedor ou um conversor online para gerar os PNGs.</p>
+  
+  <canvas id="canvas16" width="16" height="16"></canvas>
+  <canvas id="canvas48" width="48" height="48"></canvas>
+  <canvas id="canvas128" width="128" height="128"></canvas>
+  
+  <script>
+    function drawIcon(canvasId, size) {
+      const canvas = document.getElementById(canvasId);
+      const ctx = canvas.getContext('2d');
+      const center = size / 2;
+      const radius = size * 0.4;
+      
+      // Fundo circular
+      ctx.beginPath();
+      ctx.arc(center, center, radius, 0, Math.PI * 2);
+      ctx.fillStyle = '#667eea';
+      ctx.fill();
+      
+      // Checkmark
+      ctx.strokeStyle = 'white';
+      ctx.lineWidth = size * 0.08;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      
+      ctx.beginPath();
+      ctx.moveTo(center * 0.6, center * 1.1);
+      ctx.lineTo(center * 0.9, center * 1.4);
+      ctx.lineTo(center * 1.5, center * 0.7);
+      ctx.stroke();
+    }
+    
+    drawIcon('canvas16', 16);
+    drawIcon('canvas48', 48);
+    drawIcon('canvas128', 128);
+  </script>
+</body>
+</html>
